@@ -1,0 +1,25 @@
+plugins {
+    id 'java' // If you don't already have this
+    id 'application'
+}
+
+group = "org.example"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = 'com.example.geniusapp.Main'
+}
+
+dependencies {
+    testImplementation(platform("org.junit:junit-bom:5.10.0"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    implementation 'org.postgresql:postgresql:42.7.1'
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
